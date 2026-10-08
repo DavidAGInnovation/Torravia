@@ -32,3 +32,6 @@ __pycache__/
 **/.build/
 **/.swiftpm/
 /public-export/
+
+# Optional separately versioned private providers; never add them to this repo.
+/Private/

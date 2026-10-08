@@ -58,7 +58,9 @@ Browser control is disabled until enabled in Settings; Torravia must remain runn
 `Sources/Torravia` contains the app and Academic Torrents provider.
 `Packages/TorraviaSearch` contains shared provider contracts, result models, and
 parsing utilities. `Sources/NativeTorrentHelper` contains the libtorrent bridge.
-The public project has no private package dependency.
+The public project has no private package dependency. Optional private extensions
+can live in a separately versioned `Private/` checkout, ignored by this repository;
+public builds and tests do not require it.
 
 ## License and contributions
 
