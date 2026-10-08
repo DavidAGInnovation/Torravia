@@ -96,6 +96,7 @@ final class SearchPeerCountsStore: ObservableObject {
         }
         let id = generation
         let approved = approvedTrackers ?? TrackerPeerScraper.approvedPublicTrackers
+        let lookup = self.lookup
         var seen = Set<String>()
         let pending = items.compactMap { item -> (String, String)? in
             guard let hash = TrackerPeerScraper.infoHash(in: item.magnetLink), seen.insert(hash).inserted else { return nil }
@@ -111,7 +112,6 @@ final class SearchPeerCountsStore: ObservableObject {
             states[hash] = SearchPeerCountState(isChecking: true)
             return (hash, item.magnetLink)
         }
-        let lookup = self.lookup
         let concurrency = self.concurrency
         let task = Task { @MainActor [weak self] in
             if lookup == nil {
