@@ -43,6 +43,27 @@ class DependencyUpdaterTests(unittest.TestCase):
             self.assertEqual(updater.latest(refresh=True)[1], (2, 1, 2))
         self.assertEqual(json.loads((self.root / 'upstream-release.json').read_text()), release)
 
+    def test_authenticated_release_request_uses_token_header(self):
+        release = {'tag_name': 'v2.1.2'}
+        with patch.dict(updater.os.environ, {'GITHUB_TOKEN': 'test-token'}, clear=True), \
+                patch.object(updater.urllib.request, 'urlopen', return_value=io.BytesIO(json.dumps(release).encode())) as fetch:
+            self.assertEqual(updater.latest(refresh=True)[1], (2, 1, 2))
+            request = fetch.call_args.args[0]
+            self.assertEqual(request.get_header('Authorization'), 'Bearer test-token')
+            self.assertEqual(request.full_url, updater.API)
+
+    def test_fallback_sends_authentication_over_stdin_not_command_arguments(self):
+        release = {'tag_name': 'v2.1.2'}
+        with patch.dict(updater.os.environ, {'GITHUB_TOKEN': 'test-token'}, clear=True), \
+                patch.object(updater.urllib.request, 'urlopen', side_effect=updater.urllib.error.URLError('connection failed')), \
+                patch.object(updater.subprocess, 'check_output', return_value=json.dumps(release)) as fallback:
+            self.assertEqual(updater.latest(refresh=True)[1], (2, 1, 2))
+            command = fallback.call_args.args[0]
+            self.assertNotIn('test-token', ' '.join(command))
+            self.assertIn('@-', command)
+            self.assertIn('Authorization: Bearer test-token\n', fallback.call_args.kwargs['input'])
+            self.assertEqual(command[-1], updater.API)
+
     def test_integrity_check_rejects_library_tampering_and_newer_os_requirement(self):
         vendor = self.root / 'Vendor'
         contents = {'libtorrent/include/libtorrent/version.hpp':

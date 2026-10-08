@@ -62,13 +62,22 @@ def write_json(path, value):
     temporary.replace(path)
 
 
+def github_headers():
+    headers = {'User-Agent': 'Torravia-dependency-updater',
+               'Accept': 'application/vnd.github+json'}
+    token = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
+    if token:
+        headers['Authorization'] = 'Bearer ' + token
+    return headers
+
+
 def latest(refresh):
     cache = WORK / 'upstream-release.json'
     if not refresh and cache.exists() and time.time() - cache.stat().st_mtime < 300:
         release = json.loads(cache.read_text())
     else:
-        request = urllib.request.Request(API, headers={'User-Agent': 'Torravia-dependency-updater',
-                                                       'Accept': 'application/vnd.github+json'})
+        headers = github_headers()
+        request = urllib.request.Request(API, headers=headers)
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 release = json.load(response)
@@ -76,11 +85,13 @@ def latest(refresh):
             # macOS curl can recover from connection/address-family failures
             # that stall urllib. Fetch the same official endpoint, with TLS
             # verification and a bounded timeout; invalid data still fails.
+            # Headers go over stdin so token values never appear in command
+            # arguments or CalledProcessError messages.
             release = json.loads(subprocess.check_output([
                 '/usr/bin/curl', '-4', '--fail', '--silent', '--show-error',
-                '--max-time', '30', '--user-agent', 'Torravia-dependency-updater',
-                '--header', 'Accept: application/vnd.github+json', API
-            ], timeout=35, text=True))
+                '--max-time', '30', '--header', '@-', API
+            ], input=''.join(name + ': ' + value + '\n' for name, value in headers.items()),
+                timeout=35, text=True))
         write_json(cache, release)
     match = re.fullmatch(r'v(\d+)\.(\d+)\.(\d+)', release['tag_name'])
     if not match or release.get('prerelease') or release.get('draft'):
@@ -168,7 +179,7 @@ def rebuild_openssl():
     ssl_version = match[1]
     tag = 'openssl-' + ssl_version
     request = urllib.request.Request('https://api.github.com/repos/openssl/openssl/releases/tags/' + tag,
-                                     headers={'User-Agent': 'Torravia-dependency-updater'})
+                                     headers=github_headers())
     with urllib.request.urlopen(request, timeout=30) as response:
         release = json.load(response)
     asset = next((a for a in release['assets'] if a['name'] == tag + '.tar.gz'), None)

@@ -10,6 +10,8 @@ jobs:
   macos:
     runs-on: macos-26
     timeout-minutes: 45
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
