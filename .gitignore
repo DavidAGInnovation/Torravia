@@ -1,0 +1,34 @@
+### Project-specific ignores
+Torrent downloader/tmp-downloads/
+
+### macOS
+.DS_Store
+
+### Local logs
+*.log
+/build.log
+
+### Xcode user-specific files
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+### Local build artifacts
+/Apps/
+/DerivedData/
+/build/
+/build-debug/
+/.build/
+*.xcresult
+
+### Python caches
+__pycache__/
+*.py[cod]
+
+# Swift package caches and clean public exports
+**/.build/
+**/.swiftpm/
+/public-export/

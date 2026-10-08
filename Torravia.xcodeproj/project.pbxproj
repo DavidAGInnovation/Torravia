@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2ED700272E878FC5004ADC13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED700172E878FC5004ADC13 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2ED62DC12E876197004ADC13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED62DAB2E876195004ADC13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ED62DB22E876195004ADC13;
+			remoteInfo = Torravia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2ED62DB32E876195004ADC13 /* Torravia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torravia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED62DC02E876197004ADC13 /* TorraviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorraviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED700172E878FC5004ADC13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		EC1E8CCBF5F24C28B7E65C2024824B73 /* Torravia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Torravia.entitlements"; path = "Configuration/Torravia.entitlements"; sourceTree = SOURCE_ROOT; };
+		A10000023F23000100AAAA02 /* Torravia.Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Torravia.Debug.entitlements"; path = "Configuration/Torravia.Debug.entitlements"; sourceTree = SOURCE_ROOT; };
+		325AB0BE70DCB6B72549048B /* TorrentNativeHelperPayloads.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperPayloads.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperPayloads.inl"; sourceTree = SOURCE_ROOT; };
+		80FC547CBE048CF06254BA82 /* TorrentNativeHelperTorrentActions.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperTorrentActions.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperTorrentActions.inl"; sourceTree = SOURCE_ROOT; };
+		0F3EF06FD2712ABD5137D3AD /* TorrentStorageKind.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentStorageKind.hpp"; path = "Sources/NativeTorrentHelper/TorrentStorageKind.hpp"; sourceTree = SOURCE_ROOT; };
+		7EF009515307A668EE922876 /* TorrentNativeHelperTorrentLifecycle.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperTorrentLifecycle.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperTorrentLifecycle.inl"; sourceTree = SOURCE_ROOT; };
+		9CDF143436BF58D737CACE79 /* TorrentNativeHelperCommands.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperCommands.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperCommands.inl"; sourceTree = SOURCE_ROOT; };
+		EF72E193C17604B4B7CC98EF /* TorrentRecord.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentRecord.hpp"; path = "Sources/NativeTorrentHelper/TorrentRecord.hpp"; sourceTree = SOURCE_ROOT; };
+		ED28637594C207FA76CDB86C /* TorrentSessionSettings.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentSessionSettings.hpp"; path = "Sources/NativeTorrentHelper/TorrentSessionSettings.hpp"; sourceTree = SOURCE_ROOT; };
+		A65CDA69C2705C2652C1FF0C /* TorrentNativeHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "TorrentNativeHelper.mm"; path = "Sources/NativeTorrentHelper/TorrentNativeHelper.mm"; sourceTree = SOURCE_ROOT; };
+		C85D9014E76F037EE104B97C /* TorrentNativeHelperRuntime.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperRuntime.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperRuntime.inl"; sourceTree = SOURCE_ROOT; };
+		5479575B6A8D7268F105F532 /* TorrentNativeHelperUtilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperUtilities.hpp"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperUtilities.hpp"; sourceTree = SOURCE_ROOT; };
+		0C0FC0E9660AC4945872BFCE /* TorrentResumeStore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentResumeStore.hpp"; path = "Sources/NativeTorrentHelper/TorrentResumeStore.hpp"; sourceTree = SOURCE_ROOT; };
+		5061CB37F200CBF6DE669945 /* TorrentSessionPersistence.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentSessionPersistence.hpp"; path = "Sources/NativeTorrentHelper/TorrentSessionPersistence.hpp"; sourceTree = SOURCE_ROOT; };
+		85DE412CB2550AB68BE2F9EF /* TorrentNativeHelperEvents.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperEvents.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperEvents.inl"; sourceTree = SOURCE_ROOT; };
+		9D2A9F3D063E22174A8FC09B /* TorrentNativeHelperAlerts.inl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "TorrentNativeHelperAlerts.inl"; path = "Sources/NativeTorrentHelper/TorrentNativeHelperAlerts.inl"; sourceTree = SOURCE_ROOT; };
+		31130B9E6135AD1455D0F26E /* Icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Icon"; path = "Resources/Icon"; sourceTree = SOURCE_ROOT; };
+		3B89566C06058D35C3041231 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "scripts"; path = "scripts"; sourceTree = SOURCE_ROOT; };
+		31AECF062C06505572E5FD76 /* Vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Vendor"; path = "Vendor"; sourceTree = SOURCE_ROOT; };
+		26B8A2275216BD2FBDC97102 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README.md"; path = "README.md"; sourceTree = SOURCE_ROOT; };
+		817648052F88E4B8A9F0EB27 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "build.sh"; path = "build.sh"; sourceTree = SOURCE_ROOT; };
+		C2642848F910B9DB46511567 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Project.xcconfig"; sourceTree = SOURCE_ROOT; };
+		EF4EE53FCFC57D6F44660568 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Project-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		D048D376E3B4567D712FF7F3 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Project-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		4324D5BAF4171B3712FD528F /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/App.xcconfig"; sourceTree = SOURCE_ROOT; };
+		5FC57AECC755F8EC342E64E4 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/App-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BABF650AB41560F9436FEC4E /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/App-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		0A633B0DAC75A09E6B2AD3E4 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Tests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		CC989C8766A95E25A5DC58CA /* Tests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Tests-Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		330CB49EC25623A57179B617 /* Tests-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration/BuildSettings/Tests-Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2ED62DB02E876195004ADC13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A81000000000000000000003,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED62DBD2E876197004ADC13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		52F58D0624230C5D17DB882F /* Torravia */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
+			path = "Sources/Torravia";
+			sourceTree = SOURCE_ROOT;
+		};
+		B21141723F03DA4B41126B81 /* TorraviaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {};
+			explicitFolders = ();
+			path = "Tests/TorraviaTests";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXGroup section */
+		2ED62DAA2E876195004ADC13 = {
+			isa = PBXGroup;
+			children = (
+				C649E897C9E96D7A1806D5D1 /* Configuration */,
+				2ED62DB42E876195004ADC13 /* Products */,
+				7472FBA4E48A201F627D7BE9 /* Resources */,
+				6523C5CD4FB50993E348C0D5 /* Sources */,
+				76FC134CD9BB0DD83B2DBB22 /* Tests */,
+				817648052F88E4B8A9F0EB27 /* build.sh */,
+				26B8A2275216BD2FBDC97102 /* README.md */,
+				3B89566C06058D35C3041231 /* scripts */,
+				31AECF062C06505572E5FD76 /* Vendor */,
+			);
+			sourceTree = "<group>";
+		};
+		C649E897C9E96D7A1806D5D1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C2642848F910B9DB46511567 /* Project.xcconfig */,
+				EF4EE53FCFC57D6F44660568 /* Project-Debug.xcconfig */,
+				D048D376E3B4567D712FF7F3 /* Project-Release.xcconfig */,
+				4324D5BAF4171B3712FD528F /* App.xcconfig */,
+				5FC57AECC755F8EC342E64E4 /* App-Debug.xcconfig */,
+				BABF650AB41560F9436FEC4E /* App-Release.xcconfig */,
+				0A633B0DAC75A09E6B2AD3E4 /* Tests.xcconfig */,
+				CC989C8766A95E25A5DC58CA /* Tests-Debug.xcconfig */,
+				330CB49EC25623A57179B617 /* Tests-Release.xcconfig */,
+				A10000023F23000100AAAA02 /* Torravia.Debug.entitlements */,
+				EC1E8CCBF5F24C28B7E65C2024824B73 /* Torravia.entitlements */,
+			);
+			name = "Configuration";
+			path = "Configuration";
+			sourceTree = SOURCE_ROOT;
+		};
+		7472FBA4E48A201F627D7BE9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2ED700172E878FC5004ADC13 /* Assets.xcassets */,
+				31130B9E6135AD1455D0F26E /* Icon */,
+			);
+			name = "Resources";
+			path = "Resources";
+			sourceTree = SOURCE_ROOT;
+		};
+		6523C5CD4FB50993E348C0D5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D7ED888870CF0707EB900060 /* NativeTorrentHelper */,
+				52F58D0624230C5D17DB882F /* Torravia */,
+			);
+			name = "Sources";
+			path = "Sources";
+			sourceTree = SOURCE_ROOT;
+		};
+		D7ED888870CF0707EB900060 /* NativeTorrentHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A65CDA69C2705C2652C1FF0C /* TorrentNativeHelper.mm */,
+				9D2A9F3D063E22174A8FC09B /* TorrentNativeHelperAlerts.inl */,
+				9CDF143436BF58D737CACE79 /* TorrentNativeHelperCommands.inl */,
+				85DE412CB2550AB68BE2F9EF /* TorrentNativeHelperEvents.inl */,
+				325AB0BE70DCB6B72549048B /* TorrentNativeHelperPayloads.inl */,
+				C85D9014E76F037EE104B97C /* TorrentNativeHelperRuntime.inl */,
+				80FC547CBE048CF06254BA82 /* TorrentNativeHelperTorrentActions.inl */,
+				7EF009515307A668EE922876 /* TorrentNativeHelperTorrentLifecycle.inl */,
+				5479575B6A8D7268F105F532 /* TorrentNativeHelperUtilities.hpp */,
+				EF72E193C17604B4B7CC98EF /* TorrentRecord.hpp */,
+				0C0FC0E9660AC4945872BFCE /* TorrentResumeStore.hpp */,
+				5061CB37F200CBF6DE669945 /* TorrentSessionPersistence.hpp */,
+				ED28637594C207FA76CDB86C /* TorrentSessionSettings.hpp */,
+				0F3EF06FD2712ABD5137D3AD /* TorrentStorageKind.hpp */,
+			);
+			name = "NativeTorrentHelper";
+			path = "Sources/NativeTorrentHelper";
+			sourceTree = SOURCE_ROOT;
+		};
+		76FC134CD9BB0DD83B2DBB22 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B21141723F03DA4B41126B81 /* TorraviaTests */,
+			);
+			name = "Tests";
+			path = "Tests";
+			sourceTree = SOURCE_ROOT;
+		};
+		2ED62DB42E876195004ADC13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2ED62DB32E876195004ADC13 /* Torravia.app */,
+				2ED62DC02E876197004ADC13 /* TorraviaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2ED62DB22E876195004ADC13 /* Torravia */ = {
+			isa = PBXNativeTarget;
+			fileSystemSynchronizedGroups = (
+				52F58D0624230C5D17DB882F,
+			);
+			buildConfigurationList = 2ED62DD42E876197004ADC13 /* Build configuration list for PBXNativeTarget "Torravia" */;
+			buildPhases = (
+				2ED62DAF2E876195004ADC13 /* Sources */,
+				2ED62DB02E876195004ADC13 /* Frameworks */,
+				A1D1A8A14F8F4E7E8F19A001 /* Build Native Torrent Helper */,
+				2ED62DB12E876195004ADC13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Torravia;
+			packageProductDependencies = (
+				A81000000000000000000002,
+			);
+			productName = Torravia;
+			productReference = 2ED62DB32E876195004ADC13 /* Torravia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2ED62DBF2E876197004ADC13 /* TorraviaTests */ = {
+			isa = PBXNativeTarget;
+			fileSystemSynchronizedGroups = (
+				B21141723F03DA4B41126B81,
+			);
+			buildConfigurationList = 2ED62DD72E876197004ADC13 /* Build configuration list for PBXNativeTarget "TorraviaTests" */;
+			buildPhases = (
+				2ED62DBC2E876197004ADC13 /* Sources */,
+				2ED62DBD2E876197004ADC13 /* Frameworks */,
+				2ED62DBE2E876197004ADC13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2ED62DC22E876197004ADC13 /* PBXTargetDependency */,
+			);
+			name = TorraviaTests;
+			packageProductDependencies = ();
+			productName = TorraviaTests;
+			productReference = 2ED62DC02E876197004ADC13 /* TorraviaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2ED62DAB2E876195004ADC13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					2ED62DB22E876195004ADC13 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					2ED62DBF2E876197004ADC13 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 2ED62DB22E876195004ADC13;
+					};
+				};
+			};
+			buildConfigurationList = 2ED62DAE2E876195004ADC13 /* Build configuration list for PBXProject "Torravia" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2ED62DAA2E876195004ADC13;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2ED62DB42E876195004ADC13 /* Products */;
+			packageReferences = (A81000000000000000000001,);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2ED62DB22E876195004ADC13 /* Torravia */,
+				2ED62DBF2E876197004ADC13 /* TorraviaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2ED62DB12E876195004ADC13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED700272E878FC5004ADC13 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED62DBE2E876197004ADC13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1D1A8A14F8F4E7E8F19A001 /* Build Native Torrent Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelper.mm",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperCommands.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperTorrentLifecycle.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperTorrentActions.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentTrackerStatus.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentPeerSources.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperPayloads.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperRuntime.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperAlerts.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperEvents.inl",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentNativeHelperUtilities.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentStorageKind.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentRecord.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentSessionSettings.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentSessionPersistence.hpp",
+				"$(SRCROOT)/Sources/NativeTorrentHelper/TorrentResumeStore.hpp",
+				"$(SRCROOT)/scripts/build_native_helper.sh",
+				"$(SRCROOT)/Vendor/boost/include",
+				"$(SRCROOT)/Vendor/boost/manifest.txt",
+				"$(SRCROOT)/Vendor/libtorrent/lib/libtorrent-rasterbar.dylib",
+				"$(SRCROOT)/Vendor/libtorrent/manifest.json",
+				"$(SRCROOT)/scripts/update_libtorrent.py",
+				"$(SRCROOT)/Vendor/openssl/lib/libssl.3.dylib",
+				"$(SRCROOT)/Vendor/openssl/lib/libcrypto.3.dylib",
+			);
+			name = "Build Native Torrent Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/MacOS/TorrentNativeHelper",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks/libtorrent-rasterbar.dylib",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks/libssl.3.dylib",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks/libcrypto.3.dylib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/scripts/build_native_helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2ED62DAF2E876195004ADC13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED62DBC2E876197004ADC13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2ED62DC22E876197004ADC13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ED62DB22E876195004ADC13 /* Torravia */;
+			targetProxy = 2ED62DC12E876197004ADC13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2ED62DD22E876197004ADC13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF4EE53FCFC57D6F44660568 /* Project-Debug.xcconfig */;
+			buildSettings = {};
+			name = Debug;
+		};
+		2ED62DD32E876197004ADC13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D048D376E3B4567D712FF7F3 /* Project-Release.xcconfig */;
+			buildSettings = {};
+			name = Release;
+		};
+		2ED62DD52E876197004ADC13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FC57AECC755F8EC342E64E4 /* App-Debug.xcconfig */;
+			buildSettings = {};
+			name = Debug;
+		};
+		2ED62DD62E876197004ADC13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BABF650AB41560F9436FEC4E /* App-Release.xcconfig */;
+			buildSettings = {};
+			name = Release;
+		};
+		2ED62DD82E876197004ADC13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC989C8766A95E25A5DC58CA /* Tests-Debug.xcconfig */;
+			buildSettings = {};
+			name = Debug;
+		};
+		2ED62DD92E876197004ADC13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 330CB49EC25623A57179B617 /* Tests-Release.xcconfig */;
+			buildSettings = {};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+	2ED62DAE2E876195004ADC13 /* Build configuration list for PBXProject "Torravia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED62DD22E876197004ADC13 /* Debug */,
+				2ED62DD32E876197004ADC13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+	2ED62DD42E876197004ADC13 /* Build configuration list for PBXNativeTarget "Torravia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED62DD52E876197004ADC13 /* Debug */,
+				2ED62DD62E876197004ADC13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+	2ED62DD72E876197004ADC13 /* Build configuration list for PBXNativeTarget "TorraviaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED62DD82E876197004ADC13 /* Debug */,
+				2ED62DD92E876197004ADC13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+		A81000000000000000000001 = { isa = XCLocalSwiftPackageReference; relativePath = "Packages/TorraviaSearch"; };
+		A81000000000000000000002 = { isa = XCSwiftPackageProductDependency; package = A81000000000000000000001; productName = TorraviaSearchCore; };
+		A81000000000000000000003 = { isa = PBXBuildFile; productRef = A81000000000000000000002; };
+	};
+	rootObject = 2ED62DAB2E876195004ADC13 /* Project object */;
+}

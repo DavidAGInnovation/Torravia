@@ -1,0 +1,3 @@
+// Torravia Tests-Debug build settings.
+
+#include "Tests.xcconfig"

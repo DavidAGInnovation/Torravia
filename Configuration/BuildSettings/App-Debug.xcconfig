@@ -1,0 +1,5 @@
+// Torravia App-Debug build settings.
+
+#include "App.xcconfig"
+
+CODE_SIGN_ENTITLEMENTS = Configuration/Torravia.Debug.entitlements

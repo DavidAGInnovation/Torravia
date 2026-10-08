@@ -1,0 +1,23 @@
+{
+  "version": "2.1.2",
+  "upstream_tag": "v2.1.2",
+  "release_url": "https://github.com/arvidn/libtorrent/releases/tag/v2.1.2",
+  "published_at": "2026-09-25T08:38:14Z",
+  "updated_at": "2026-10-07T01:25:13.698592+00:00",
+  "source": "verified upstream source archive",
+  "source_sha256": "sha256:3362546d9cd71b9e49ee6cac7d3f1f914ce9cdb217c86b63d5b22cbed0334dbc",
+  "abi_version": 2,
+  "deployment_target": "14.0",
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "dylib_sha256": "7266b0bec18af87c258648c37aa18147c2bdcecddc71fe96bebb14f57b2ac620",
+  "boost_package": "1.92.0",
+  "boost_manifest_sha256": "ddfd9954e9ac75b57cfc004345d567aba16b72cd0404fd532e9e8e5057424360",
+  "boost_version_header_sha256": "cf992d9d2c4f2294b69d8819e334927644a48b978bfea3c525e3f9c6dbc7cb9f",
+  "openssl_dylib_sha256": {
+    "libssl.3.dylib": "527d12e9464e4a22e181fadfb4b2fc88a4c5d931e6b4b8a6de8b84a7207c9d2a",
+    "libcrypto.3.dylib": "e95658492b953728ef5daea5ec8a335cbcd370da6fccd71ba8086b6a89fa3e0c"
+  }
+}

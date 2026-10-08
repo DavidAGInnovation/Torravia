@@ -1,0 +1,6 @@
+// Torravia App-Release build settings.
+
+#include "App.xcconfig"
+
+CODE_SIGN_ENTITLEMENTS = Configuration/Torravia.entitlements
+CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO

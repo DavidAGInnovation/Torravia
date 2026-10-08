@@ -1,0 +1,29 @@
+name: Validate public app
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh and verify native dependency versions
+        run: python3 scripts/update_libtorrent.py --refresh
+      - name: Dependency updater tests
+        run: python3 Tests/NativeTorrentHelper/DependencyUpdaterTests.py
+      - name: Public app tests
+        run: xcodebuild test -project Torravia.xcodeproj -scheme Torravia -destination 'platform=macOS' -derivedDataPath .build/DerivedData
+      - name: Build universal release
+        run: xcodebuild build -project Torravia.xcodeproj -scheme Torravia -configuration Release -destination 'platform=macOS' -derivedDataPath .build/DerivedData
+      - name: Verify signatures and local transfers
+        run: python3 Tests/NativeTorrentHelper/UniversalCompatibilityTests.py
