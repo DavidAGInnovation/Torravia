@@ -204,6 +204,11 @@ final class UnifiedSettingsDocumentView: NSView, NSTextFieldDelegate, NSTextView
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.refreshAfterAction() }
             .store(in: &cancellables)
+        providerHealth.$proxyDirectoryLinks
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in self?.refreshAfterAction() }
+            .store(in: &cancellables)
     }
 
     func rebuildDocument(preserveScroll: Bool = false) {

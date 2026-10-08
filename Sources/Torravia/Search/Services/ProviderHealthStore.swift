@@ -60,6 +60,8 @@ final class ProviderHealthStore: ObservableObject {
     @Published private(set) var providerLinks: [TorrentSearchSite: URL] = [:]
     /// The live source selected by the provider health check, when available.
     @Published private(set) var sourceLinks: [TorrentSearchSite: URL] = [:]
+    /// A directory that actually supplied the selected search endpoint.
+    @Published private(set) var proxyDirectoryLinks: [TorrentSearchSite: URL] = [:]
     /// Compatibility view of the currently usable link.
     @Published private(set) var links: [TorrentSearchSite: URL] = [:]
     @Published private(set) var isChecking = false
@@ -90,6 +92,10 @@ final class ProviderHealthStore: ObservableObject {
         sourceLinks[site]
     }
 
+    func proxyDirectoryLink(for site: TorrentSearchSite) -> URL? {
+        proxyDirectoryLinks[site]
+    }
+
     /// A completed search is stronger evidence than an earlier availability
     /// probe. Keep Settings in sync even when only one provider fails.
     func recordSearchOutcome(providerName: String, error: Error?) {
@@ -107,6 +113,7 @@ final class ProviderHealthStore: ObservableObject {
         let fallbackLinks = Self.defaultLinks()
         providerLinks = fallbackLinks
         sourceLinks = [:]
+        proxyDirectoryLinks = [:]
         links = fallbackLinks
         isChecking = true
         lastCheckedAt = nil
@@ -130,6 +137,9 @@ final class ProviderHealthStore: ObservableObject {
             }
             self.providerLinks = fallbackLinks
             self.sourceLinks = resolvedLinks
+            self.proxyDirectoryLinks = results.reduce(into: [:]) { links, entry in
+                if let url = entry.value.proxyDirectoryURL { links[entry.key] = url }
+            }
             self.links = resolvedLinks.reduce(into: fallbackLinks) { links, entry in
                 links[entry.key] = entry.value
             }
@@ -169,8 +179,8 @@ final class ProviderHealthStore: ObservableObject {
         await withTaskGroup(of: ProviderHealthResult.self) { group in
             for site in sites {
                 group.addTask {
-                    let (state, url) = await checkSite(site, session: session)
-                    return ProviderHealthResult(site: site, state: state, url: url)
+                    let result = await checkSiteLinks(site, session: session)
+                    return ProviderHealthResult(site: site, state: result.state, url: result.url, proxyDirectoryURL: result.proxyDirectoryURL)
                 }
             }
 
@@ -187,6 +197,15 @@ final class ProviderHealthStore: ObservableObject {
         session: URLSession,
         context: (any ProviderRequestContext)? = nil
     ) async -> (ProviderHealthState, URL?) {
+        let result = await checkSiteLinks(site, session: session, context: context)
+        return (result.state, result.url)
+    }
+
+    static func checkSiteLinks(
+        _ site: TorrentSearchSite,
+        session: URLSession,
+        context: (any ProviderRequestContext)? = nil
+    ) async -> (state: ProviderHealthState, url: URL?, proxyDirectoryURL: URL?) {
         let observer = ProviderSearchEndpointObserver(site: site)
         // Give each provider its own observer and cookie session so concurrent
         // mirror lookups cannot mix up the resolved source URLs.
@@ -204,11 +223,11 @@ final class ProviderHealthStore: ObservableObject {
                 if let failure = observer.searchFailure { throw failure }
                 throw HealthCheckError.invalidSearchResponse
             }
-            return (.online, url)
+            return (.online, url, ProviderSearchProbeRegistry.proxyDirectory(session: probeSession, for: url))
         } catch is CancellationError {
-            return (.offline("Check canceled"), nil)
+            return (.offline("Check canceled"), nil, nil)
         } catch {
-            return (failureState(for: error), nil)
+            return (failureState(for: error), nil, nil)
         }
     }
 
@@ -241,6 +260,7 @@ private struct ProviderHealthResult: Sendable {
     let site: TorrentSearchSite
     let state: ProviderHealthState
     let url: URL?
+    let proxyDirectoryURL: URL?
 }
 
 /// Capture only search/feed responses. A reachable mirror directory or

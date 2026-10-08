@@ -85,12 +85,13 @@ extension UnifiedSettingsDocumentView {
         let providerURL = providerHealth.providerLink(for: site)
         let sourceURL = providerHealth.sourceLink(for: site)
         let links: [ProviderLink]
-        if let providerURL, let sourceURL, sourceURL != providerURL {
+        if let directoryURL = providerHealth.proxyDirectoryLink(for: site),
+           let sourceURL, sourceURL != directoryURL {
             links = [
-                ProviderLink(label: "Provider URL", url: providerURL),
+                ProviderLink(label: "Provider URL", url: directoryURL),
                 ProviderLink(label: "Source URL", url: sourceURL)
             ]
-        } else if let singleURL = providerURL ?? sourceURL {
+        } else if let singleURL = sourceURL ?? providerURL {
             links = [ProviderLink(label: nil, url: singleURL)]
         } else {
             links = []
