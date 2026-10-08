@@ -35,3 +35,6 @@ __pycache__/
 
 # Optional separately versioned private providers; never add them to this repo.
 /Private/
+
+# Development instructions belong in the separate private repository.
+AGENTS.md
