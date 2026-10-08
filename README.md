@@ -9,6 +9,13 @@ Windows support is not available yet.
 
 ## Build and run
 
+Clone the public source:
+
+```sh
+git clone https://github.com/DavidAGInnovation/Torravia.git
+cd Torravia
+```
+
 Install Xcode 26 or newer (Swift 6.2+), select it with `xcode-select`, and install
 Python 3.12+ (`brew install python`). Open `Torravia.xcodeproj`, choose the
 **Torravia** scheme, and run. Or use:
