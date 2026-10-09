@@ -12,7 +12,7 @@ Windows support is not available yet.
 Clone the public source:
 
 ```sh
-git clone https://github.com/DavidAGInnovation/Torravia.git
+git clone https://github.com/Torravia/Torravia.git
 cd Torravia
 ```
 
